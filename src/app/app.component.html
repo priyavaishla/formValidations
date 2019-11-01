@@ -1,0 +1,66 @@
+<form [formGroup] = "employeeform" (ngSubmit) = "submitData()"> 
+    <div class="form-group">
+      <label for="Name">Name:</label>
+      <input type="text" class="form-control" formControlName = "name">
+    </div>
+
+<span *ngIf = "viewmessage.name" class = "text-danger">
+  {{viewmessage.name}}
+</span>
+
+
+    <div class="form-group">
+        <label for="Email">Email Address:</label>
+        <input type="email" class="form-control" formControlName = "email">
+      </div>
+
+ <span *ngIf = "viewmessage.email" class = "text-danger">
+  {{viewmessage.email}}
+  </span>
+
+    <div class="form-group">
+      <label for="pwd">Password:</label>
+      <input type="password" class="form-control" id="pwd" formControlName = "Password">
+    </div>
+
+    <span *ngIf = "viewmessage.Password" class = "text-danger">
+      {{viewmessage.Password}}
+      </span>
+   
+    <div formGroupName = "Skills">
+        <label for="Skills" class = "text-primary">Skills:</label>
+        <div class="form-group">
+            <label for="pwd">Designation:</label>
+            <input type="text" class="form-control" formControlName = "Designation" >
+          </div>   
+
+          <span *ngIf = "viewmessage.Designation" class = "text-danger">
+            {{viewmessage.Designation}}
+            </span>
+
+          <div class="form-group">
+                <label for="pwd">Experience:</label>
+                <input type="text" class="form-control" formControlName = "Experience" >
+              </div>
+
+              <span *ngIf = "viewmessage.Experience" class = "text-danger">
+                {{viewmessage.Experience}}
+                </span>
+
+
+              <div class="form-group">
+                    <label for="pwd">Proficiency:</label>
+                    <input type="radio" formControlName = "Proficiency" name = "Proficiency" value = "Fresher"> Fresher
+                    <input type="radio" formControlName = "Proficiency" name = "Proficiency" value = "Intermediate"> Intermediate
+                    <input type="radio" formControlName = "Proficiency" name = "Proficiency" vale = "Experienced">  Experienced
+                  </div>
+
+                  <span *ngIf = "viewmessage.Proficiency" class = "text-danger">
+                    {{viewmessage.Proficiency}}
+                    </span>
+                    
+                    
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
